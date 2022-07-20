@@ -1,11 +1,13 @@
 {
-  "name": "node-libs-react-native",
-  "version": "1.2.1",
-  "author": "Tobias Koppers @sokra",
+  "author": "sacru2red <sacru2red@gmail.com>",
+  "name": "@react-native-module/node-libs-react-native",
   "description": "Node core modules for React Native",
+  "version": "1.2.1",
+  "main": "index.js",
+  "homepage": "https://github.com/react-native-module/node-libs-react-native",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/parshap/node-libs-react-native.git"
+    "url": "git+https://github.com/react-native-module/node-libs-react-native.git"
   },
   "dependencies": {
     "@react-native-module/crypto": "^2.1.2",
@@ -35,13 +37,14 @@
     "url": "^0.11.0",
     "util": "^0.10.3"
   },
-  "homepage": "http://github.com/parshap/node-libs-react-native",
-  "main": "index.js",
+  "peerDependencies": {
+    "react-native": "*"
+  },
   "scripts": {
     "test": "node index.js"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/parshap/node-libs-react-native/issues"
+    "url": "https://github.com/react-native-module/node-libs-react-native/issues"
   }
 }
