@@ -9,6 +9,6 @@ global.location = {
 // Some modules expect userAgent to be a string
 global.navigator.userAgent = 'React Native';
 
-const { encode, decode } = require("base-64");
-global.atob = decode;
-global.btoa = encode;
+const { atob, btoa } = require("js-base64");
+global.atob = atob;
+global.btoa = btoa;
