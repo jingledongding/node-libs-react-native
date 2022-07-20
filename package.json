@@ -8,6 +8,10 @@
     "url": "git+https://github.com/parshap/node-libs-react-native.git"
   },
   "dependencies": {
+    "@react-native-module/crypto": "^2.1.2",
+    "@react-native-module/get-random-values": "^1.8.5-3",
+    "@react-native-module/pbkdf2": "^0.3.7",
+    "@react-native-module/randombytes": "^3.6.6-3",
     "assert": "^1.4.1",
     "base-64": "^0.1.0",
     "browserify-zlib": "^0.2.0",
@@ -22,7 +26,6 @@
     "process": "^0.11.0",
     "punycode": "^2.1.0",
     "querystring-es3": "^0.2.0",
-    "react-native-crypto": "^2.0.1",
     "react-native-randombytes": "^3.5.1",
     "readable-stream": "^2.2.9",
     "stream-http": "^2.3.1",

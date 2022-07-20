@@ -4,7 +4,7 @@ exports.child_process				= null;
 exports.cluster						= null;
 exports.console						= require.resolve('console-browserify');
 exports.constants					= require.resolve('constants-browserify');
-exports.crypto						= require.resolve('react-native-crypto');
+exports.crypto						= require.resolve('@react-native-module/crypto');
 exports.dgram						= null;
 exports.dns							= null;
 exports.domain						= require.resolve('domain-browser');
@@ -36,3 +36,6 @@ exports.url							= require.resolve('url/');
 exports.util						= require.resolve('util/util.js');
 exports.vm							= null;
 exports.zlib						= require.resolve('browserify-zlib');
+exports.['get-random-values']       = require.resolve('@react-native-module/get-random-values');
+exports.randombytes                 = require.resolve('@react-native-module/randombytes');
+
