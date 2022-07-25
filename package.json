@@ -10,9 +10,9 @@
     "url": "git+https://github.com/react-native-module/node-libs-react-native.git"
   },
   "dependencies": {
-    "@react-native-module/crypto": "^2.1.3-3",
+    "@react-native-module/crypto": "^2.1.3-4",
     "@react-native-module/pbkdf2": "^0.3.7",
-    "@react-native-module/randombytes": "^3.6.7-0",
+    "@react-native-module/randombytes": "^3.6.7-1",
     "assert": "^1.4.1",
     "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.3",
