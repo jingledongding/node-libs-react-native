@@ -51,7 +51,7 @@ edit babel.config.js
 ```js
 // add lines
 
-const nativeAlias = require('@react-native-modules/node-libs-react-native/babelResolvers')
+const nativeAlias = require('@react-native-module/node-libs-react-native/babelResolvers')
 
 const nativePlugins = [
   [
