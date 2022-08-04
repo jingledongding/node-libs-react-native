@@ -46,7 +46,19 @@ Some package not in extraNodeModules, but react-native's runtime run much slow o
 [pbkdf2](https://github.com/crypto-browserify/pbkdf2) is so slow in react-native's runtime
 [randombytes](https://github.com/crypto-browserify/randombytes) is complain "Error: Secure random number generation is not supported by this browser. \nUse Chrome, Firefox or Internet Explorer 11"
 
-edit babel.config.js
+If you wanna solve this Issue follow Steps
+
+1. Install babel-plugin-module-resolver
+
+```
+npm install --save-dev babel-plugin-module-resolver
+```
+
+```
+yarn add -D babel-plugin-module-resolver
+```
+
+2. Edit babel.config.js
 
 ```js
 // add lines
@@ -81,6 +93,8 @@ module.exports = {
   ...
 }
 ```
+
+3. And Just Run it
 
 ### Globals
 
