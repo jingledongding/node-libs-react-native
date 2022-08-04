@@ -39,6 +39,49 @@ For more information, see this post on [Node core modules in React Native][post]
 
 [post]: https://gist.github.com/parshap/e3063d9bf6058041b34b26b7166fd6bd
 
+### Support additional packages
+
+Some package not in extraNodeModules, but react-native's runtime run much slow or cannot
+
+[pbkdf2](https://github.com/crypto-browserify/pbkdf2) is so slow in react-native's runtime
+[randombytes](https://github.com/crypto-browserify/randombytes) is complain "Error: Secure random number generation is not supported by this browser. \nUse Chrome, Firefox or Internet Explorer 11"
+
+edit babel.config.js
+
+```js
+// add lines
+
+const nativeAlias = require('@react-native-modules/node-libs-react-native/babelResolvers')
+
+const nativePlugins = [
+  [
+    require.resolve('babel-plugin-module-resolver'),
+    {
+      alias: {
+        ...nativeAlias
+      },
+    },
+  ]
+]
+
+// add plugins to env (If you are not env, just add plugins)
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+  env: {
+    production: {
+      plugins: [...nativePlugins, 'react-native-paper/babel'],
+    },
+    development: {
+      plugins: [...nativePlugins]
+    },
+    web: {
+      plugins: [...myWebPlugins]
+    }
+  },
+  ...
+}
+```
+
 ### Globals
 
 Node has certain globals that modules may expect, such as `Buffer` or `process`. React Native does not provide these globals. The [`node-libs-react-native/globals`][globals] module in this package will shim the global environment to add these globals. Just require (or import) this module in your app before anything else.
