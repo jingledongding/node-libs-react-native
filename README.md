@@ -6,14 +6,14 @@ This package provides React Native compatible implementations of Node core modul
 
 ## Installation
 
-This module has peerDependency "react-native"
+This module has peerDependency "react", "react-native", "@react-native-module/pbkdf2"
 
 ```
-npm install --save @react-native-module/node-libs-react-native
+npm install --save @react-native-module/node-libs-react-native @react-native-module/pbkdf2
 ```
 
 ```
-yarn add @react-native-module/node-libs-react-native
+yarn add @react-native-module/node-libs-react-native @react-native-module/pbkdf2
 ```
 
 ## Usage
