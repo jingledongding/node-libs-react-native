@@ -41,12 +41,12 @@ For more information, see this post on [Node core modules in React Native][post]
 
 ### Globals
 
-Node has certain globals that modules may expect, such as `Buffer` or `process`. React Native does not provide these globals. The [`node-libs-react-native/globals`][globals] module in this package will shim the global environment to add these globals. Just require (or import) this module in your app before anything else.
+Node has certain globals that modules may expect, such as `Buffer` or `process`. React Native does not provide these globals. The [`@react-native-module/node-libs-react-native/globals`][globals] module in this package will shim the global environment to add these globals. Just require (or import) this module in your app before anything else.
 
 [globals]: ./globals.js
 
 ```js
-require("node-libs-react-native/globals");
+require("@react-native-module/node-libs-react-native/globals");
 // ...
 require("./app.js");
 ```
