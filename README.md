@@ -6,14 +6,14 @@ This package provides React Native compatible implementations of Node core modul
 
 ## Installation
 
-This module has peerDependency "react-native"
+This module has peerDependency "react", "react-native", "@react-native-module/pbkdf2"
 
 ```
-npm install --save @react-native-module/node-libs-react-native
+npm install --save @react-native-module/node-libs-react-native @react-native-module/pbkdf2
 ```
 
 ```
-yarn add @react-native-module/node-libs-react-native
+yarn add @react-native-module/node-libs-react-native @react-native-module/pbkdf2
 ```
 
 ## Usage
@@ -38,6 +38,63 @@ module.exports = {
 For more information, see this post on [Node core modules in React Native][post].
 
 [post]: https://gist.github.com/parshap/e3063d9bf6058041b34b26b7166fd6bd
+
+### Support additional packages
+
+Some package not in extraNodeModules, but react-native's runtime run much slow or cannot
+
+[pbkdf2](https://github.com/crypto-browserify/pbkdf2) is so slow in react-native's runtime
+[randombytes](https://github.com/crypto-browserify/randombytes) is complain "Error: Secure random number generation is not supported by this browser. \nUse Chrome, Firefox or Internet Explorer 11"
+
+If you wanna solve this Issue follow Steps
+
+1. Install babel-plugin-module-resolver
+
+```
+npm install --save-dev babel-plugin-module-resolver
+```
+
+```
+yarn add -D babel-plugin-module-resolver
+```
+
+2. Edit babel.config.js
+
+```js
+// add lines
+
+const nativeAlias = require('@react-native-module/node-libs-react-native/babelResolvers')
+
+const nativePlugins = [
+  [
+    require.resolve('babel-plugin-module-resolver'),
+    {
+      alias: {
+        ...nativeAlias
+      },
+    },
+  ]
+]
+
+// add plugins to env (If you are not env, just add plugins)
+module.exports = {
+  presets: ['module:metro-react-native-babel-preset'],
+  env: {
+    production: {
+      plugins: [...nativePlugins, 'react-native-paper/babel'],
+    },
+    development: {
+      plugins: [...nativePlugins]
+    },
+    web: {
+      plugins: [...myWebPlugins]
+    }
+  },
+  ...
+}
+```
+
+3. And Just Run it
 
 ### Globals
 
